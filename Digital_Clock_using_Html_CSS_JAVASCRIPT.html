@@ -1,0 +1,63 @@
+<html>
+  <head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #7ee8fa;
+  background-image: linear-gradient(315deg, #dfdc25 0%, #d451ad 74%);
+  font-family: "Londrina Solid", cursive;
+}
+
+.container {
+  border-radius: 50px;
+  background: black;
+  box-shadow: 20px 20px 60px #d6dfd5, -20px -20px 60px #c7cfc5;
+  padding: 5rem;
+  color: #191414;
+  cursor: default;
+}
+span {
+  font-size: 3rem;
+}
+
+.digital-clock {
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+  color: white;
+}
+
+
+  </style>
+    
+  </head>
+  <body>
+    <div class="container">
+      <span style="color: white;">DIGITAL CLOCK</span>
+      <br />
+      <br />
+      <div class="digital-clock" id="digital-clock"></div>
+    </div>
+    <script>
+        let clock = document.getElementById("digital-clock");
+
+setInterval(() => {
+  let date = new Date();
+//   eturns a string with a language sensitive representation of the time portion of this date
+//   for more information visit https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+    </script>
+  </body>
+</html>
